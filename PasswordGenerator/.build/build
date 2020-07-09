@@ -1,0 +1,12 @@
+#!/bin/sh
+
+#cd ..
+#INPUT=main.c
+#OUTPUT=passgen
+#OPTS=-g -I../../utl/utl/
+#gcc $OPTS $INPUT -o $OUTPUT
+
+[ -d cbuild ] | rm -r cbuild
+
+cmake -S .. -B ./cbuild && make -C ./cbuild && mv ./cbuild/passgen ..
+#cmake -G Ninja -S .. -B ./cbuild && ninja -C ./cbuild
